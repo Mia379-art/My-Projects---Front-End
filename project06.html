@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>صفحه اصلی</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./asset/js/main.js"></script>
+    <script src="./asset/js/get-set.js"></script>
+    <script src="./asset/js/get-set.js"></script>
+    <script src="./asset/js/owl.carousel.min.js"></script>
+    <script src="./asset/js/owl.theme.default.css"></script>
+    <script src="./asset/js/owl.carousel.css"></script>
+    <link rel="stylesheet" href="./asset/js/get-set.js" />
+    <link rel="stylesheet" href="./asset/js/main.js" />
+    <link rel="stylesheet" href="./asset/js/owl.carousel.css" />
+    <link rel="stylesheet" href="./asset/js/owl.theme.default.css" />
+
+    <link rel="stylesheet" href="/asset/css/Style.css" />
+    <link rel="stylesheet" href="/asset/css/style-grid-system.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+      .course-title {
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+        padding: 100px;
+        font-size: 34px;
+        color: black;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #d8e0e5;
+      }
+      .card {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        box-shadow: 0 0 20px rgb(0, 0, 0.5);
+        transition: box-shadow 0.3s;
+        width: 376px;
+      }
+      .card:hover {
+        box-shadow: 0 0 50px rgb(0, 0, 0, 0.5);
+      }
+      .card-thumb {
+        height: 235px;
+        overflow: hidden;
+        transition: height 0.3s;
+      }
+      .card:hover .card-thumb{
+        height: 100px;
+      }
+
+      .card-thumb img {
+        width: 100%; /* عکس عرض کل والدش رو بگیره */
+        height: 200px; /* ارتفاع ثابت برای کادر */
+        display: block; /* حذف فاصله پایین img */
+        opacity: 1;
+        transition: opacity 0.3s, transform 0.3s;
+      }
+      .card:hover .card-thumb img {
+        opacity: 0.7;
+        transform: scale(1.2);
+      }
+      .card .card-date {
+        background-color: #08ec;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        min-width: 70px;
+        min-height: 34px;
+        border-radius: 5px;
+        color: white;
+        text-align: center;
+        padding: 3px;
+        margin-top: 6px;
+        margin-right: 6px;
+      }
+      .card-date-day {
+        display: block;
+        font-size: 17px;
+      }
+      .card-date-month {
+        display: block;
+        font-size: 15px;
+      }
+      .card-body {
+        position: relative;
+        padding: 20px;
+        height: 185px;
+        transition: height 0.3s;
+      }
+      .card:hover .card-body {
+        height: 330px;
+      }
+      .card-category {
+        position: absolute;
+        top: -70px;
+        left: 0;
+        height: 25px;
+        padding: 0 15px;
+        background-color: #08ec;
+        color: white;
+        font-size: 11px;
+        line-height: 23px;
+      }
+      .card-title {
+        padding: 0 0 10px 0;
+        margin: 0;
+        font-size: 22px;
+        color: black;
+        font-weight: bold;
+      }
+      .card-subtitle {
+        margin: 0;
+        padding: 0 0 10px 0;
+        font-size: 22px;
+        color: #08ec;
+      }
+      .card-description {
+        position: absolute;
+        top: 126px;
+        left: 20px;
+        right: 20px;
+        bottom: 65px;
+        color: #666c74;
+        font-size: 16px;
+        line-height: 27px;
+        transition: opacity 0.2s, transform 0 0.2s;
+        transform: translateY(25px);
+        opacity: 0;
+      }
+      .card:hover .card-description {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .card-footer {
+        position: absolute;
+        color: #a3a9ab;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        font-size: 13px;
+      }
+      .card-footer .time {
+        margin-right: 10px;
+      }
+      .card-footer .comment {
+        margin: auto;
+      }
+      .card-footer i {
+        margin-left: 1px; /* فاصله بین متن و آیکون قبلی */
+        font-size: 14px; 
+        color: #666c74;
+        vertical-align: 7px;
+        margin-right: 4px;
+        
+      }
+    </style>
+  </head>
+  <body>
+    <p class="course-title">پروژه 5</p>
+    <div class="card">
+      <div class="card-thumb">
+        <a href="#"><img src="./asset/img/01 (2).jpg" alt="" /></a>
+      </div>
+      <div class="card-date">
+        <span class="card-date-day">31</span>
+        <span class="card-date-month">شهریور</span>
+      </div>
+      <div class="card-body">
+        <div class="card-category">طراحی وب</div>
+        <div class="card-title">انیمیشن در css</div>
+        <div class="card-subtitle">قسمت اول معرفی</div>
+        <p class="card-description">
+       لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولو  رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+        </p>
+      </div>
+      <div class="card-footer">
+        <span class="material-symbols-outlined time"> alarm </span
+        ><i>30 دقیقه</i>
+        <span class="material-symbols-outlined comment"> comment </span
+        ><i>دیدگاه</i>
+      </div>
+    </div>
+  </body>
+  <script></script>
+</html>

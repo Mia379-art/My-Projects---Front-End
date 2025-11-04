@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout Example</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+      }
+      .container {
+        width: 90%;
+        margin: 20px auto;
+        background: #fff3cd;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      /* Header */
+      header {
+        text-align: center;
+        padding: 30px;
+        font-size: 32px;
+        font-weight: bold;
+        color: #444;
+        background: #fff3cd;
+      }
+
+      /* Navigation */
+      nav {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        background: #fff3cd;
+        padding: 10px 0;
+      }
+      nav a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+      }
+
+      .main {
+        display: flex;
+        min-height: 300px;
+      }
+      .sidebar {
+        flex: 1;
+        background: #d6d8d7;
+        padding: 20px;
+        font-weight: bold;
+        color: #333;
+      }
+      .content {
+        flex: 3;
+        background: #f5c6cb;
+        padding: 20px;
+      }
+      .content h2 {
+        margin-top: 0;
+        font-size: 22px;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 20px;
+        background: #fff3cd;
+        font-size: 16px;
+        font-weight: bold;
+        color: #444;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>Header</header>
+
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Courses</a>
+        <a href="#">Blog</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+
+      <div class="main">
+        <div class="sidebar">
+          HTML <br />
+          CSS <br />
+          Javascript
+        </div>
+        <div class="content">
+          <h2>JavaScript</h2>
+          <p>
+            JavaScript, often abbreviated as JS, is a programming language that
+            is one of the core technologies of the World Wide Web, alongside
+            HTML and CSS.
+          </p>
+          <p>
+            As of 2023, 98.7% of websites use JavaScript on the client side for
+            webpage behavior, often incorporating third-party libraries.
+          </p>
+        </div>
+      </div>
+
+      <footer>Footer</footer>
+    </div>
+  </body>
+</html>

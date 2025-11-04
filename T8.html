@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>Dark / Light Mode</title>
+  <style>
+    /* حالت پیش‌فرض (Light Mode) */
+    body {
+      background-color: #fff;
+      color: #000;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    #toggle-btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #ddd;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    #toggle-btn:hover {
+      background: #bbb;
+    }
+
+    /* حالت Dark Mode */
+    .dark-mode {
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+
+    .dark-mode #toggle-btn {
+      background: #444;
+      color: #fff;
+    }
+    
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+</head>
+<body>
+  <button id="toggle-btn">🌙 Dark Mode</button>
+
+  <div class="content">
+    <h1>سلام محیا 👋</h1>
+    <p>این یه متن آزمایشی برای تمرین دارک مود و لایت مود هست.</p>
+  </div>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Countdown Timer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .timer {
+      display: flex;
+      justify-content: center;
+      background: black;
+      color: white;
+      border: 5px solid deeppink;
+      border-radius: 10px;
+      padding: 20px;
+      font-size: 24px;
+    }
+    .timer div {
+      margin: 0 20px;
+      text-align: center;
+    }
+    .timer span {
+      display: block;
+      font-size: 40px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="timer">
+    <div>
+      <span id="hours"></span>
+      Hours
+    </div>
+    <div>
+      <span id="minutes"></span>
+      Minutes
+    </div>
+    <div>
+      <span id="seconds"></span>
+      Seconds
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      function updateTimer() {
+        // تاریخ هدف: اول ژانویه 2025
+        var targetDate = new Date("Jan 1, 2026 00:00:00").getTime();
+        var now = new Date().getTime();
+        var distance = targetDate - now;
+
+        if (distance < 0) {
+          $("#hours").text("0");
+          $("#minutes").text("0");
+          $("#seconds").text("0");
+          return;
+        }
+
+        var hours = Math.floor(distance / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        $("#hours").text(hours);
+        $("#minutes").text(minutes);
+        $("#seconds").text(seconds);
+      }
+
+      // هر ۱ ثانیه آپدیت میشه
+      setInterval(updateTimer, 1000);
+      updateTimer();
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+  <script>
+    $(document).ready(function () {
+      $("#toggle-btn").click(function () {
+        $("body").toggleClass("dark-mode");
+
+        // تغییر متن دکمه
+        if ($("body").hasClass("dark-mode")) {
+          $(this).text("☀️ Light Mode");
+        } else {
+          $(this).text("🌙 Dark Mode");
+        }
+      });
+    });
+  </script>
+  <div class="clock"></div>
+
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl"> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>صفحه اصلی</title>
+   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="./asset/js/main.js"></script>
+   <script src="./asset/js/get-set.js"></script>
+ <script src="./asset/js/get-set.js"></script>
+ <script src="./asset/js/owl.carousel.min.js"></script>
+ <script src="./asset/js/owl.theme.default.css"></script>
+ <script src="./asset/js/owl.carousel.css"></script>
+ <link rel="stylesheet" href="./asset/js/get-set.js">
+ <link rel="stylesheet" href="./asset/js/main.js">
+ <link rel="stylesheet" href="./asset/js/owl.carousel.css">
+ <link rel="stylesheet" href="./asset/js/owl.theme.default.css">
+
+    <link rel="stylesheet" href="/asset/css/Style.css" />
+    <link rel="stylesheet" href="/asset/css/style-grid-system.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <style>
+      
+    .test1{
+      display: inline-block;
+      width: 200px;
+      height: 40px;
+      border: 1px solid #ccc;
+      color: black;
+      padding: 10px;
+      margin: 10px;
+      position: relative;
+    }
+    .c1{
+      display: inline-block;
+      width: 200px;
+      height: 40px;
+      background-color: rgb(90, 58, 20);
+      border: 1px solid #ccc;
+      color: black;
+      margin: 10px;
+      padding: 10px;
+      
+    }
+    .c2{
+      display: inline-block;
+      width: 200px;
+      height: 40px;
+      background-color: red;
+      color: azure;
+      padding: 10px;
+      margin: 10px;
+    }
+    .c3 {
+      display: inline-block;
+      width: 200px;
+      height: 40px;
+      background-color: blue;
+      color: azure;
+      padding: 10px;
+      margin: 10px;
+    }
+    .button{
+      width: 100px;
+      height: 40px;
+      background-color: rgb(68, 68, 127);
+      border-radius: 10px 0 10px 0;
+      position: relative;
+    }
+    .btn-1{
+      background-color: red;
+    }
+    ul{
+      margin-top: 30px;
+    }
+    .add-class{
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+      border: 1px solid #efefef;
+      background-color: aqua;
+      box-shadow: 10px 10px 5px black;
+
+    }
+
+  </style>
+
+  </head>
+  <body>
+    <span class="btn-1">add-Class</span>
+<div>متن آزمایشی</div>
+
+
+
+
+    <div class="click">کلیک کنید </div> 
+    <input type="text" class="input">
+   <span class="c2"> preppend</span>
+   <span class="c4"> after</span>
+   <span class="c5"> before</span>
+     <span class="c1"> append</span>
+   <ul>
+    <li>متن آزمایشی</li>
+   </ul>
+   <class="c3"> مخفی ساز</class=>>
+   <div class="test1"> hello world!!</div> 
+   <button class="button"></button>
+   <input type="text" class="input">
+    <a id="link" href="#">لینک اولیه</a>
+  <div class="owl-carousel owl-theme">
+    <div class="item"><img src= "./asset/img/01.jpg"alt=""><h4>1</h4></div>
+    <div class="item"><img src="./asset/img/01.jpg" alt=""><h4>2</h4></div>
+    <div class="item"><img src="./asset/img/01.jpg" alt=""><h4>3</h4></div>
+    <div class="item"><img src="./asset/img/01.jpg" alt=""><h4>4</h4></div>
+    <div class="item"><img src="./asset/img/01.jpg" alt=""><h4>5</h4></div>
+    <div class="item"><img src="./asset/img/01.jpg" alt=""><h4>6</h4></div>
+    <div class="item"><img src="./asset/img/01.jpg" alt=""><h4>7</h4></div>
+    <div class="item"><img src="./asset/img/01.jpg" alt=""><h4>8</h4></div>
+    <div class="item"><img src="./asset/img/01.jpg" alt=""><h4>9</h4></div>
+    <div class="item"><img src="./asset/img/01.jpg" alt=""><h4>10</h4></div>
+</div>
+
+
+
+
+
+
+  </body>
+  <script>
+ $(document).ready(function(){
+ $('.owl-carousel').owlCarousel({
+    rtl:true,
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+})
+});
+</script>
+</html>
