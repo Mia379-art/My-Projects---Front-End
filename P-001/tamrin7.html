@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>تمرین jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      direction: rtl;
+      padding: 20px;
+    }
+    p, div {
+      border: 1px solid #aaa;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>تمرین jQuery</h2>
+
+  <p>این یک پاراگراف نمونه است.</p>
+  <p class="test">این یک پاراگراف با کلاس test است.</p>
+
+  <div>
+    <span>من داخل یک div هستم.</span>
+    <p>من هم فرزند div هستم.</p>
+  </div>
+
+  <br>
+
+  <button id="btn1">الف: اضافه کردن متن به انتهای p</button>
+  <button id="btn2">ب: اضافه کردن متن به ابتدای p</button>
+  <button id="btn3">پ: حذف p با کلاس test</button>
+  <button id="btn4">ت: خالی کردن فرزندان div</button>
+
+  <script>
+    $(document).ready(function () {
+      // الف
+      $("#btn1").click(function () {
+        $("p").append(" Hello World");
+      });
+
+      // ب
+      $("#btn2").click(function () {
+        $("p").prepend("Hello World ");
+      });
+
+      // پ
+      $("#btn3").click(function () {
+        $("p.test").remove();
+      });
+
+      // ت
+      $("#btn4").click(function () {
+        $("div").empty();
+      });
+    });
+  </script>
+
+</body>
+</html>

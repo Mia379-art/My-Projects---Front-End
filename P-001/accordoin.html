@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>صفحه اصلی</title>
+    <link rel="stylesheet" href="/asset/css/Style.css" />
+    <link rel="stylesheet" href="/asset/css/style-grid-system.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+      ul.accordion {
+        background-color: #efefef;
+        list-style: none;
+        padding: 0;
+      }
+
+      ul.accordion div {
+        background-color: #9292ff;
+        font-size: 16px;
+        padding: 10px;
+        color: #efefef;
+        cursor: pointer;
+      }
+
+      ul.accordion li {
+        color: #333;
+        margin-top: 10px;
+        font-size: 16px;
+        background-color: #fff;
+        border-bottom: 1px solid #efefef;
+      }
+
+      ul.accordion a {
+        text-decoration: none;
+        color: black;
+      }
+      ul.accordion ul {
+        display: none;
+      }
+
+      #top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #000;
+        width: 50px;
+        height: 50px;
+        display: flex; /* نمایش flex */
+        align-items: center; /* وسط چین عمودی */
+        justify-content: center; /* وسط چین افقی */
+        border-radius: 50%;
+        color: white;
+        text-decoration: none;
+        opacity: 0.7;
+        transition: all 0.3s ease;
+      }
+
+      #top:hover {
+        opacity: 1;
+        background-color: #333;
+        transform: translateY(-5px);
+      }
+
+      /* استایل اضافه برای آیکون مادیال */
+      #top .material-symbols-outlined {
+        font-size: 30px; /* تنظیم سایز آیکون */
+        line-height: -1px; /* رفع مشکل فاصله */
+        display: block;
+      }
+      .modal {
+        display: none;
+        width: 400px;
+        height: 300px;
+        text-align: center;
+        background-color: #fff;
+        box-shadow: 1px 1px 10px 10px rgb(128, 124, 128);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        border-radius: 50px;
+      }
+      .bg-modal {
+        background-color: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        width: 100%;
+        height: 100vh;
+        display: none;
+      }
+      .modal-link {
+        width: 80px;
+        height: 50px;
+        background-color: #efefef;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        font-size: 16px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        box-shadow: 1px 1px 10px 10px rgb(128, 124, 128);
+        display: flex;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <ul class="accordion">
+      <li>
+        <div>برای مشاهده جزییات کلیک کنید</div>
+        <ul>
+          <li>
+            <a href=""
+              >لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a
+            >
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="accordion">
+      <li>
+        <div>برای مشاهده جزییات کلیک کنید</div>
+        <ul>
+          <li>
+            <a href=""
+              >لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a
+            >
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="accordion">
+      <li>
+        <div>برای مشاهده جزییات کلیک کنید</div>
+        <ul>
+          <li>
+            <a href=""
+              >لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a
+            >
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <a href="#" id="top">
+      <span class="material-symbols-outlined  ">arrow_shape_up</span>
+    </a>
+    <a href="" class="modal-link">کلیک کنید</a>
+    <div class="modal">
+      <p>This is a simple modal!</p>
+      <a href="" class="close">
+        <span class="material-symbols-outlined "> close_small </span></a
+      >
+    </div>
+    <div class="bg-modal"></div>
+   
+    <br /><br /><br />
+    <br /><br /><br />
+    <br /><br /><br />
+    <br /><br /><br />
+    <br /><br /><br />
+    <br /><br /><br />
+    <br /><br /><br />
+    <br /><br /><br />
+    <br /><br /><br />
+    <br /><br /><br />
+    <br /><br /><br />
+    <br /><br /><br />
+    <br /><br /><br />
+    <br /><br /><br />
+    <br /><br /><br />
+     <br /><br /><br />
+    <br /><br /><br />
+    <br /><br /><br />
+    <br /><br /><br />
+    <br /><br /><br />
+    <br /><br /><br />
+    <br /><br /><br />
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./asset/js/get-set.js"></script>
+  </body>
+</html>
