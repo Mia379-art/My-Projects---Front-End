@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .container {
+      
+      display: grid;
+      grid-gap: 10px;
+      height: auto;
+      
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+    .child {
+      border: 1px solid #f9f9f9;
+      
+    }
+    .img-responsive{
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+     .container div{
+        overflow: hidden;
+        transition: .5s ease;
+    }
+    .container div img:hover{
+        transform: rotate(10deg) scale(1.6);
+
+    }
+      @media (max-width:700px){
+   .container {
+    grid-template-columns: repeat(2, 1fr);  
+    grid-template-rows: repeat(6, 200px);   
+  }
+  }
+  </style>
+  <body>
+    <div class="container">
+      <div class="child c1"> <img class="img-responsive" src="../P-003/Screenshot (1069).png" alt=""></div>
+      <div class="child c2"> <img class="img-responsive" src="../P-003/Screenshot (1070).png" alt=""></div>
+      <div class="child c3"><img class="img-responsive" src="../P-003/Screenshot (18).png" alt=""></div>
+      <div class="child c3"><img class="img-responsive" src="../P-003/Screenshot (204).png" alt=""></div>
+      <div class="child c4"><img class="img-responsive" src="../P-003/Screenshot (51).png" alt=""></div>
+      <div class="child c5"><img class="img-responsive" src="../P-003/Screenshot (204).png" alt=""></div>
+      <div class="child c6"><img class="img-responsive" src="../P-003/Screenshot (707).png" alt=""></div>
+      <div class="child c7"><img class="img-responsive" src="../P-003/Screenshot (83).png" alt=""></div>
+      <div class="child c8"><img class="img-responsive" src="../P-003/Screenshot (85).png" alt=""></div>
+      <div class="child c9"><img class="img-responsive" src="../P-003/Screenshot (86).png" alt=""></div>
+      <div class="child c10"><img class="img-responsive" src="../P-003/Screenshot (87).png" alt=""></div>
+      <div class="child c11"><img class="img-responsive" src="../P-003/Screenshot (92).png" alt=""></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form01</title>
+</head>
+<style>
+    @font-face {
+  font-family: Vazir-Medium;
+  src: url(../fonts/Vazir-Medium.eot) format("eot"),
+    url(../fonts/Vazir-Medium.woff) format("woff"),
+    url(../fonts/Vazir-Medium.woff2) format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Vazir-Medium;
+}
+body {
+  direction: rtl; 
+  display: flex;     
+  justify-content: center; 
+  align-items: center;     
+  padding: 20px;
+}
+a {
+  text-decoration: none;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 80px;
+    width: 100%;
+    padding: 20px;
+    background-color: #2b4242;
+    color: azure;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #444;
+    box-shadow: 0 3px  6px rgba(0, 0, 0, .5);
+    min-height: 270px;
+}
+.inputs{
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 10px 0 10px 10px ;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.inputs input{
+    width: 100%;
+    padding: 20px 0 4px 0;
+    border-color: #aaa;
+    border-width: 0 0 2px 0;
+    color: #fff;
+    background-color: transparent;/* پس زمینه شفاف */
+    outline: 0;
+    padding: 0 15px;
+    transition: all .3s;
+}
+.inputs input:focus{
+    border-bottom: 2px solid  #fff;   
+}
+.half{
+    width: 50%;
+}
+.inputs label {
+  position: absolute;
+  right: 8px;
+  bottom: 10px;
+  color: #aaa;
+  pointer-events: none; /* 👈 این خط خیلی مهمه */
+  transition: all 0.3s ease;
+}
+.inputs input:placeholder-shown+label{
+    color: #999;
+    right: 0;
+    bottom: -4px;
+}
+.inputs input:focus+label,
+.inputs input+label{
+    position: absolute;
+    bottom: 14px;
+    right: 0;
+    line-height: 60px;
+    font-size: 14px;
+    transition: all .25s;
+    color: #999;
+}
+button {
+  background-color: #526c6c;
+  color: #eef7f7;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  float: left;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #ffcc66;
+}
+
+
+
+</style>
+<body>
+    <div class="container">
+        <div class="inputs"> فرم ثبت نام</div>
+        <form action="">
+            <div class="inputs half"><input type="text" name="userName" placeholder=" " ><label >نام کاربری</label></div>
+            <div class="inputs half"><input type="password" name="upassword" placeholder=" "><label >کلمه عبور</label></div>
+            <div class="inputs full"><input type="text" name="name" placeholder=" "><label >نام و نام خواندگی </label></div>
+            <div class="inputs"> <button type="submit" name="submit" placeholder=" "> ثبت نام</button></div>
+        </form>
+    </div>
+</body>
+</html>
