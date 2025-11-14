@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      @font-face {
+        font-family: Vazir-Medium;
+        src: url("../asset/vazir-font-v27.2.2-Fontjo.com/vazir-font-v27.2.2-Fontjo.com/Vazir-Bold.eot")
+            format("eot"),
+          url("../asset/vazir-font-v27.2.2-Fontjo.com/vazir-font-v27.2.2-Fontjo.com/Vazir-Regular.woff")
+            format("woff"),
+          url("../asset/vazir-font-v27.2.2-Fontjo.com/vazir-font-v27.2.2-Fontjo.com/Vazir-Variable.woff2")
+            format("woff2");
+        font-weight: 700;
+        font-style: normal;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+        margin: 15px 0;
+      }
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Vazir-Medium;
+        direction: ltr;
+        background-color: #f6f5f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 0;
+        min-height: 100vh; /* تمام ارتفاع صفحه */
+      }
+      input,
+      button {
+        cursor: pointer;
+      }
+      h1 {
+        font-size: 24px;
+        font-weight: bolder;
+      }
+      p {
+        font-size: 14px;
+        line-height: 26px;
+        margin: 20px 0 30px;
+        text-align: center;
+        justify-content: center;
+      }
+      span {
+        font-size: 12px;
+      }
+      button {
+        border-radius: 5px;
+        border: 1px solid #dcdcdc;
+        background-color: #e460e4ff;
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 6px 45px;
+        transition: transform 80ms ease-in;
+      }
+      .btn-reg {
+        background-color: #27ae60;
+        margin-top: 20px;
+      }
+      button:active {
+        transform: scale(0.9);
+      }
+      button:focus {
+        outline: none;
+      }
+      button.ghost {
+        background-color: transparent;
+        border-color: #fff;
+      }
+      form {
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 50px;
+        height: 100%;
+        text-align: center;
+      }
+      input {
+        background-color: #eee;
+        border: none;
+        padding: 12px 15px;
+        margin: 8px 0;
+        width: 100%;
+        direction: ltr;
+      }
+      .input-wrapper {
+        position: relative;
+        width: 100%;
+        margin: 15px 0;
+      }
+      .input-wrapper input {
+        width: 100%;
+        padding: 12px 15px;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid #ccc;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 1;
+      }
+
+      .input-wrapper input:focus {
+        outline: none;
+        border-bottom: transparent;
+      }
+
+      .input-wrapper::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 2px solid #e460e4ff;
+        border-radius: 6px;
+        background: #d6abd6;
+        color: #fff;
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 0.3s ease;
+        z-index: 0;
+      }
+      .input-wrapper:focus-within::after {
+        transform: scaleY(1); /* کادر کامل شود */
+      }
+      .input-wrapper::before {
+        content: "";
+      }
+
+      .container {
+        direction: ltr;
+        background-color: #fff;
+        position: relative;
+        overflow: hidden;
+        width: 95%;
+        height: 80vh;
+        margin: 20px;
+        border-radius: 15px;
+        min-height: 94vh;
+        z-index: 2;
+      }
+      .form-container {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        transition: all 0.6s ease-in-out;
+      }
+      .sign-in-container {
+        left: 0;
+        width: 50%;
+        z-index: 2;
+      }
+      .social-container {
+        margin: 20px 0;
+      }
+      .social-container a:hover {
+        background-color: #df4adf;
+        color: #fff;
+      }
+      .social-container a {
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        margin: 0 5px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .sign-up-container {
+        left: 0;
+        width: 50%;
+        z-index: 1;
+        opacity: 0;
+      }
+      .overlay-container {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        transition: transform 0.6s ease-in-out;
+        z-index: 100;
+      }
+      .overlay {
+        background: #df4adf;
+        background: linear-gradient(to right, #df4adf, #df4adf);
+        background-position: 0 0;
+        height: 100%;
+        width: 200%;
+        color: #fff;
+        position: relative;
+        left: -100%;
+        transform: translateX(0);
+        transition: transform 0.6s ease-in-out;
+      }
+      .overlay-left {
+        transform: translateX(-20%);
+      }
+      .overlay-right {
+        right: 0;
+        transform: translateX(0);
+      }
+      .overlay-panel {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 40px;
+        text-align: center;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        transform: translateX(0);
+        transition: transform 0.6s ease-in-out;
+      }
+      .right-panel-active .overlay-container {
+        transform: translateX(-100%);
+      }
+      .right-panel-active .sign-in-container {
+        transform: translateX(100%);
+      }
+      .right-panel-active .overlay {
+        transform: translateX(50%);
+      }
+      .black-box {
+        width: 95%;
+        height: 80vh;
+        border: 1px solid black;
+      }
+      .red-box{
+        width: 95%;
+        height: 80vh;
+        border: 3px solid rgb(126, 55, 55);
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container right-panel-active black-box" id="container">
+      <div class="form-container sign-up-container ">
+        <form action="">
+          <h1>Log in</h1>
+          <div class="input-wrapper">
+            <input type="text" placeholder="Name" />
+          </div>
+          <div class="input-wrapper">
+            <input type="password" placeholder="password" />
+          </div>
+          <a href="#">Forget Password?</a>
+          <button class="btn-login">Log In</button>
+        </form>
+      </div>
+      <div class="form-container sign-in-container">
+        <form action="">
+          <h1>Log in</h1>
+          <div class="input-wrapper">
+            <input type="text" placeholder="Name" />
+          </div>
+          <div class="input-wrapper">
+            <input type="password" placeholder="password" />
+          </div>
+          <a href="#">Forget Password?</a>
+          <button class="btn-login">Log In</button>
+        </form>
+      </div>
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>Welcome</h1>
+            <p>
+              برای دسترسی به تمام امکانات سایت<br />
+              ابتدا در سایت لاگین نمایید
+            </p>
+            <button class="ghost" id="signIn">ورود</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1>فرم ثبت کاربر جدید</h1>
+            <p>
+              اگر عضو سایت نیستید<br />
+              در کمتر از 1 دقیقه عضو سایت شوید
+            </p>
+            <a
+              href="http://127.0.0.1:5500/My%20project/My-Projects---Front-End/p-005/inputs.html"
+              target="_blank"
+            >
+              <button class="ghost" id="signUp">عضویت</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#signUp").click(function () {
+        $("#container").addClass("right-panel-active");
+      });
+      $("#signIn").click(function () {
+        $("#container").removeClass("right-panel-active");
+      });
+    });
+  </script>
+</html>

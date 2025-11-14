@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>فرم ثبت کاربر جدید</title>
+    <style>
+      body {
+        font-family: "Vazir", sans-serif;
+        background-color: #fdf2f7;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 40px;
+        direction: rtl;
+      }
+      form {
+        background: #fff;
+        padding: 25px 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+        width: 720px;
+        height: ;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .row {
+        display: flex;
+        gap: 15px;
+      }
+      .row > div {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      label {
+        font-weight: bolder;
+        color: #333;
+        margin-bottom: 5px;
+        display: flex;
+      }
+      input,
+      select,
+      textarea {
+        padding: 9px 10px;
+        font-size: 14px;
+        border: 2px solid #f8cfe1;
+        border-radius: 6px;
+        transition: border-color 0.3s ease;
+        direction: rtl;
+        background-color: #fff;
+      }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: #b76c94;
+        outline: none;
+      }
+
+      /* ✅ وقتی کاربر چیزی تایپ کرد و مقدار معتبر است */
+      input:valid:not(:placeholder-shown),
+      textarea:valid:not(:placeholder-shown),
+      select:valid:not([value=""]) {
+        border-color: #28a745; /* سبز */
+      }
+
+      /* ❌ وقتی کاربر چیزی تایپ کرد و نامعتبر است */
+      input:invalid:not(:focus):not(:placeholder-shown),
+      textarea:invalid:not(:focus):not(:placeholder-shown),
+      select:invalid:not(:focus):not([value=""]) {
+        border-color: #dc3545; /* قرمز */
+      }
+
+      /* فایل‌ها */
+      input[type="file"] {
+        border: 2px solid #f8cfe1;
+        background: #fff8fb;
+        cursor: pointer;
+      }
+
+      /* وقتی فایل انتخاب شد */
+      input[type="file"]:valid {
+        border-color: #28a745; /* سبز */
+      }
+
+      .file-input {
+        border: 2px solid #f8cfe1;
+        background: #fff8fb;
+        cursor: pointer;
+      }
+      button {
+        margin-top: 18px;
+        width: 100%;
+        padding: 11px;
+        font-size: 15px;
+        background-color: #f179b9;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bolder;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background: #ce5c8c;
+      }
+      .no-row {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <!-- 1 -->
+      <div class="row">
+        <div>
+          <label> نام شرکت / مجموعه</label>
+          <input
+            type="text"
+            minlength="3"
+            placeholder="نام شرکت را وارد کنید "
+            oninvalid="this.setCustomValidity('لطفاً نام را وارد کنید')"
+            oninput="this.setCustomValidity('')"
+          required />
+        </div>
+        <div>
+          <label> نوع شخصیت حقوقی</label>
+          <select name="legal-type" required
+          oninvalid="this.setCustomValidity('لطفاً نوع شخصیت حقوقی را انتخاب کنید')"
+          oninput="this.setCustomValidity('')"
+          >
+            <option value="">انتخاب کنید</option>
+            <option>سهامی خاص</option>
+            <option>وکیل</option>
+            <option>سایر</option>
+          </select>
+        </div>
+      </div>
+      <!-- 2 -->
+      <div class="row">
+        <div>
+          <label for="name">نام/نام خانوادگی مدیر عامل</label>
+          <input
+            type="text"
+            name="manager-name"
+            minlength="3"
+            placeholder="نام و نام خانوادگی مدیرعامل را به فارسی وارد کنید"
+            oninvalid="this.setCustomValidity('نام و نام خانوادگی مدیرعامل را به فارسی وارد کنید')"
+          oninput="this.setCustomValidity('')"
+            required
+          />
+        </div>
+        <div>
+          <label for="number">شماره تماس شرکت</label>
+          <input
+            type="tel"
+            name="phone"
+            pattern="^09\d{9}$"
+            placeholder="09123456789"
+            oninvalid="this.setCustomValidity('لطفا شماره تماس وارد کنید')"
+            oninput="this.setCustomValidity('')"
+            required
+          />
+        </div>
+      </div>
+      <!-- 3 -->
+      <div>
+        <label for="subject">موضوع/حوزه فعالیت</label>
+        <select name="subject" id="" class="no-row" 
+        oninvalid="this.setCustomValidity('لطفا موضوع/حوزه فعالیت را انتخاب کنید')"
+        oninput="this.setCustomValidity('')"
+        required
+        >
+          <option value="">موضوع فعالیت را انتخاب کنید</option>
+          <option>فناوری اطلاعات</option>
+          <option>صنعت</option>
+          <option>بازرگانی</option>
+          <option>خدمات</option>
+        </select>
+      </div>
+      <!-- 4 -->
+      <div class="row">
+        <div>
+          <label for="">ایمیل سازمانی</label>
+          <input
+            type="email"
+            name="email"
+            pattern="^[a-zA-Z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"
+            placeholder="آدرس را به صورت کامل وارد کنید"
+            oninvalid="this.setCustomValidity('لطفا ایمیل صحیح وارد کنید')"
+            oninput="this.setCustomValidity('')"
+            required
+          />
+        </div>
+        <div>
+          <label for=""> آدرس وب سایت </label>
+          <input
+            type="url"
+            name="website"
+            pattern="^[a-zA-Z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"
+            placeholder="آدرس را به صورت کامل وارد کنید"
+            oninvalid="this.setCustomValidity('لطفا آدرس وب سایت صحیح وارد کنید')"
+            oninput="this.setCustomValidity('')"
+            required
+          />
+        </div>
+      </div>
+      <!-- 5 -->
+      <div class="row">
+        <div>
+          <label>آدرس</label>
+          <textarea
+            name="address"
+            required
+            rows="2"
+            placeholder="آدرس را وارد کنید"
+          ></textarea>
+        </div>
+        <div>
+          <label>لوگوی شرکت</label>
+          <input
+            class="file-input"
+            id="label"
+            type="file"
+            name="logo"
+            required
+            accept="image/png, image/jpeg"
+            oninvalid="this.setCustomValidity('image/png, image/jpeg')"
+            oninput="this.setCustomValidity('')"
+          />
+        </div>
+      </div>
+      <!-- 6 -->
+      <div class="row">
+        <div>
+          <label>فیلم معرفی / ویدئوی تبلیغاتی</label>
+          <input
+            class="file-input"
+            type="file"
+            name="video"
+            accept="video/*"
+            oninvalid="this.setCustomValidity('لطفا فایل ویدیو وارد کنید')"
+            oninput="this.setCustomValidity('')"
+            required
+          />
+        </div>
+        <div>
+          <label>بروشور معرفی شرکت</label>
+          <input
+            class="file-input"
+            type="file"
+            name="brochure"
+            accept=".pdf,.jpg,.png"
+            oninvalid="this.setCustomValidity('لطفا فایل .pdf,.jpg,.png وارد کنید')"
+            oninput="this.setCustomValidity('')"
+            required
+          />
+        </div>
+      </div>
+      <!-- 7 -->
+      <div class="row">
+        <div>
+          <label>کاتالوگ محصولات</label>
+          <input
+            class="file-input"
+            type="file"
+            name="catalog"
+            accept=".pdf,.jpg,.png"
+            oninvalid="this.setCustomValidity('لطفا فایل .pdf,.jpg,.png وارد کنید')"
+            oninput="this.setCustomValidity('')"
+            required
+          />
+        </div>
+        <div>
+          <label>تصاویر محصولات / خط تولید / دفتر</label>
+          <input
+            class="file-input"
+            type="file"
+            name="product_images"
+            multiple
+            accept="image"
+            oninvalid="this.setCustomValidity('لطفا تصویر وارد کنید')"
+            oninput="this.setCustomValidity('')"
+            required
+          />
+        </div>
+      </div>
+      <!-- 8 -->
+      <div>
+        <div>
+          <label>تا کنون چه سرمایه‌گذاری‌هایی دریافت کرده‌اید</label>
+          <textarea
+            type="text"
+            name="investments"
+            class="no-row"
+            placeholder="در صورت وجود بنویسید"
+          ></textarea>
+        </div>
+      </div>
+      <!-- 9 -->
+      <div>
+        <div>
+          <label>سایر توضیحات</label>
+          <textarea
+            class="no-row"
+            name="notes"
+            rows="2"
+            placeholder="توضیحات تکمیلی"
+          ></textarea>
+        </div>
+      </div>
+      <button type="submit">ارسال فرم</button>
+    </form>
+  </body>
+</html>
