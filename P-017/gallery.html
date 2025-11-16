@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+  <style>
+    body{
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        align-items: center;
+        background-color: wheat;
+
+    }
+
+    .slider-container{
+        position: relative;
+        width: 500px;
+        height: 300px; 
+        overflow: hidden;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, .3);     
+    }
+    .image-container{
+        display: flex;
+        transition: transform 0.4s ease-in-out;
+    }
+    .btn{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: white;
+        font-size: 20px;
+        opacity: .5;
+    }
+    .btn.prev{
+        left: 10px;
+    }
+    .btn.next {
+        right:10px ;
+    }
+    .btn:hover{
+        opacity: 1;
+        cursor: pointer;
+    }
+  </style>
+</head>
+  <body>
+    <div class="slider-container">
+        <div class="image-container">
+      <img src="https://picsum.photos/id/237/500/300" alt="dog, id 237" />
+      <img src="https://picsum.photos/id/1/500/300" alt="landscape, id 1" />
+      <img src="https://picsum.photos/id/10/500/300" alt="city, id 10" />
+      <img
+        src="https://picsum.photos/id/20/500/300"
+        alt="landscape (duplicate), id 1"
+      />
+           <img
+        src="https://picsum.photos/id/200/500/300"
+        alt="landscape (duplicate), id 1"
+      />
+      </div>
+      <i class="fas fa-angle-double-left btn prev"></i>
+      <i class="fas fa-angle-double-right btn next "></i>
+    </div>
+    <script src="../P-017/main.js"></script>
+  </body>
+</html>
