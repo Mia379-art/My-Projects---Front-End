@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        background-color: rgb(123, 97, 174);
+        
+      }
+      label {
+        position: absolute;
+        z-index: 4;
+      }
+      input#test {
+        display: none;
+      }
+      
+      input#test:checked ~ label {
+        right: 0;
+      }
+      label svg{
+        width: 40px;
+        height: 40px;
+      }
+
+      svg.burger rect, svg.close path{
+        fill: #fff;
+        transition: all .25s ease-in-out;
+      }
+      svg.burger rect:hover, svg.close path:hover{
+        fill: #ccc;
+        cursor: pointer;
+      }
+      svg.close{
+        position: relative;
+        top: 24px;
+        cursor: pointer;
+        opacity: 0;
+      }
+      svg.close line{
+        transform-origin: 0%;
+      }
+      svg.close g{
+        transform: rotate(45deg);
+        transform-origin: 50%;
+      }
+      input#test:checked ~label .burger{
+        opacity: 0;
+      }
+      input#test:checked ~label .close{
+        opacity: 1;
+      }
+      .menu{
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: space-around;
+         position: absolute;
+         width: 100vw;
+         height: 100vh;
+         background-color: rgb(156, 174, 97);
+         transition: all .8s cubic-bezier(0.075, 0.82, 0.165, 1);
+         color: #fff;
+         font-size: 24px;
+         font-weight: bold;
+         z-index: 2;
+         opacity: 0;
+      }
+      .menu div{
+        margin-top: 50px;
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+      .main{
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        z-index: 2;
+      }
+      input#test:checked ~ .menu div{
+        margin-top: 0;
+
+      }
+      .main span{
+        margin: auto;
+        font-size: 40px;
+        color: #fff;
+      }
+      input#test:checked ~ .menu{
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="test" type="checkbox" />
+    <label for="test">
+      <svg class="burger" width="400px" height="400px" viewBox="0 0 64 64">
+        <rect x="8" y="16" width="48" height="6" fill="#fff"/>
+        <rect x="8" y="29" width="48" height="6" fill="#fff"/>
+        <rect x="8" y="42" width="48" height="6" fill="#fff"/>
+      </svg>
+      
+     
+      <svg class="close" width="400px" height="400px" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z"
+          fill="#fff"
+        />
+      </svg>
+      
+    </label>
+    <div class="menu">
+      <div>خانه</div>
+      <div>دوره های آموزشی</div>
+      <div>درباره ما</div>
+      <div>تماس با ما</div>
+    </div>
+    <span class="main">
+      <span>خوش آمدید</span>
+    </span>
+  </body>
+</html>

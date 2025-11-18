@@ -21,6 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const randomChoice = Math.floor(Math.random() * choices.length);
     return choices[randomChoice];
   }
+  let test =[1,2,23,"Mahya",14]
+  console.log(test);
+  console.log(test[0]);
+  console.log(test[3]);
+  console.log(test[2]);
+ 
 
   function playRound(playSelection, computerSelection) {
     if (playSelection === computerSelection) {
