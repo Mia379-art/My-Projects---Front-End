@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        transition: 0.2s ease-in;
+      }
+      html,body{
+        height: 100%;
+        overflow: hidden;
+      }
+      #page-content p{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-size: 34px;
+        font-weight: bold;
+      }
+      #drawer-toggle {
+        display: none;
+      }
+      
+      #drawer-toggle-label {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        background: #f0f0f0;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 1000;
+      }
+      
+      #drawer-toggle-label::before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 18px;
+        left: 13px;
+        width: 24px;
+        height: 2px;
+        background: #8d8d8d;
+        box-shadow: 0 6px 0 #8d8d8d, 0 12px 0 #8d8d8d;
+      }
+      
+      nav {
+        position: fixed;
+        top: 0;
+        left: -300px;
+        width: 300px;
+        height: 100%;
+        background: #333;
+        color: white;
+        padding: 20px;
+        transition: left 0.3s ease;
+        
+      }
+    #drawer ul {
+        list-style: none;
+        margin-top: 50px;
+    }
+    
+    #drawer li {
+        padding: 15px 10px;
+        border-bottom: 1px solid #555;
+        margin-bottom: 10px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+      
+      #drawer-toggle:checked ~ nav {
+        left: 0;
+      }
+      
+      #drawer-toggle:checked ~ #drawer-toggle-label {
+        left: 320px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <input type="checkbox" id="drawer-toggle" />
+    <label for="drawer-toggle" id="drawer-toggle-label"></label>
+    <nav id="drawer">
+      <ul>
+        <li>خانه</li>
+        <li>دوره های آموزشی</li>
+        <li>تماس با ما</li>
+        <li>درباره ما</li>
+      </ul>
+    </nav>
+    <div id="page-content">
+      <p>دوره طراحی وب</p>
+    </div>
+  </body>
+</html>
