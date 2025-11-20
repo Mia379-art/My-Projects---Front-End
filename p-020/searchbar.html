@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        align-items: center;
+        background-color: aliceblue;
+      }
+      .search-bar-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        background-color: aliceblue;
+        padding: 5px;
+        width: 300px;
+        height: 50px;
+        border-radius: 50px;
+        box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2), -6px -6px 10px
+        rgba(255, 255, 255, .7);
+        margin: 10px; 
+        transition: width 1s;
+      }
+      .fa-magnifying-glass {
+        width: 25px;
+        color: darkblue;
+        cursor: pointer;
+        position: absolute;
+        left: 20px;
+      }
+      .fa-microphone {
+        width: 30px;
+        color: darkblue;
+        position: absolute;
+        right: 10px;
+      }
+      .input{
+        background-color: transparent;
+        border: none;
+        margin: 10px 50px;
+        outline: none;
+        color: rgb(100, 100, 100);
+      }
+        .search-bar-container.active {
+        width: 50px;
+      }
+
+      .search-bar-container.active .input {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .search-bar-container.active .fa-microphone {
+        opacity: 0;
+        pointer-events: none;
+        transition: width 0.4s;
+        transition-delay: 1s;
+      }
+
+      .search-bar-container.active .fa-magnifying-glass {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="search-bar-container active">
+      <i class="fa-solid fa-magnifying-glass gls"></i>
+      <input type="text" class="input" placeholder="Search..." />
+      <i class="fa-solid fa-microphone"></i>
+    </div>
+        <script src="../p-020/main.js"></script>
+  </body>
+</html>
